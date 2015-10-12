@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'thor'
 require 'yaml'
 require 'net/scp'
@@ -40,5 +41,4 @@ class Test < Thor
                      :ssh => {:password => config['password']}, :recursive => true)
   end
 end
-
 Test.start(ARGV)
