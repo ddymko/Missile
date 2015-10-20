@@ -24,8 +24,10 @@ class Test < Thor
       puts 'Please enter local path to project'
       local_path = STDIN.gets.chomp
       configs = {'host' => host, 'username' => username, 'password' => password, 'web_path' => web_path, 'local_path' => local_path}
-      project = project + '.yaml'
-      File.open(project, 'w+') { |file| file.write(configs.to_yaml) }
+      path = Dir.pwd
+      project =  Dir.pwd + "/configs/" + project + '.yaml'
+      
+      File.open(File.expand_path(project), 'w+') { |file| file.write(configs.to_yaml) }
     end
   end
 
