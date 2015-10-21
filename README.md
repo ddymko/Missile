@@ -7,8 +7,12 @@ Note the following guide is currently only for linux/mac os
 
 Currently you can download a zip of the project from this repo (rubygem will be coming soon)
 
+We first need to make sure we have ruby + ruby gems are installed if they are not installed please follow the guide: [Ruby installation guide](https://www.ruby-lang.org/en/documentation/installation/)
+
 Once it is download open up your favorite terminal and go to where it is located and unzip the file and run the following commands
 ```
+gem install bundler
+
 mv Missile-master /usr/local/lib/Missile
 
 rm /usr/local/lib/Missile/.gitignore
