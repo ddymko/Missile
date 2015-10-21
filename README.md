@@ -19,6 +19,10 @@ rm /usr/local/lib/Missile/.gitignore
 
 ln -s /usr/local/lib/Missile/missile.rb /usr/local/bin/missile
 
+cd /usr/local/lib/Missile
+
+bundle install
+
 source ~/.bash_profile
 ```
 
