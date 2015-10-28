@@ -10,8 +10,15 @@ class Missile < Thor
   option :d, :type => :boolean
 
   def setup(project)
+    #
+    project_dir =  Dir.pwd + '/configs/' + project + '.yaml'
     if options[:d]
-      puts 'deleting...'
+      if File.exist?(project_dir)
+        File.delete(project_dir)
+        puts "#{project} was successfully deleted"
+      else
+        puts "File #{project} does not exist"
+      end
     else
       puts 'Please enter your host >'
       host = STDIN.gets.chomp
@@ -24,12 +31,11 @@ class Missile < Thor
       puts 'Please enter local path to project'
       local_path = STDIN.gets.chomp
       configs = {:host => host, :username => username, :password => password, :web_path => web_path, :local_path => local_path}
-      project =  Dir.pwd + '/configs/' + project + '.yaml'
-      File.open(File.expand_path(project), 'w+') { |file| file.write(configs.to_yaml) }
+      File.open(File.expand_path(project_dir), 'w+') { |file| file.write(configs.to_yaml) }
     end
   end
 
-  desc 'deploy PROJECT_NAME', 'this will start a deplyoment for the specifiied project'
+  desc 'deploy PROJECT_NAME', 'this will start a deployment for the specified project'
   def deploy(project)
 
     project =  '/configs/' + project + '.yaml'
