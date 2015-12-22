@@ -8,8 +8,8 @@ class Missile < Thor
 
   @@file_path = File.expand_path(File.dirname(__FILE__)) + "/configs"
 
-  desc 'setup PROJECT_NAME', 'creates a config file for a specific deployment'
-  option :d, :type => :boolean
+  desc 'setup [project_name]', 'creates a config file for a specific deployment'
+  option :d, :type => :boolean , :desc => "Deletes specified project"
   def setup(project)
 
     project_dir =  Dir.pwd + '/configs/' + project + '.yaml'
@@ -36,8 +36,8 @@ class Missile < Thor
     end
   end
 
-  desc 'list', 'will display available deployments'
-  option :i, :type => :boolean
+  desc 'list', 'Displays available deployments'
+  option :i, :type => :boolean , :desc => "[project name] -i Displays information about specific deployment setup "
   def list(project="")
     project = @@file_path + "/" + project + ".yaml"
     options[:i] ?  List.info(project) : List.list_all(@@file_path)

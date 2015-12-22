@@ -11,7 +11,15 @@ class List
   end
 
   def self.info(project)
-    #puts out information about project details
+    if File.exist?(project)
+        text = File.open(project)
+        text.each_line do |line|
+          puts "#{line}"
+        end
+    else
+      puts "The deployment file you are looking for does not exist"
+    end
+
   end
 
 end
