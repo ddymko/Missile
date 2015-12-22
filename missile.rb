@@ -2,7 +2,7 @@
 require 'thor'
 require 'yaml'
 require 'net/scp'
-
+require_relative "lib/list"
 
 class Missile < Thor
 
@@ -37,11 +37,10 @@ class Missile < Thor
   end
 
   desc 'list', 'will display available deployments'
-  def list
-
-    Dir.entries(@@file_path).each do |e|
-      puts e.chomp('.yaml') if !File.directory?(e)
-    end
+  option :i, :type => :boolean
+  def list(project="")
+    project = @@file_path + "/" + project + ".yaml"
+    options[:i] ?  List.info(project) : List.list_all(@@file_path)
   end
 
   desc 'deploy PROJECT_NAME', 'this will start a deployment for the specified project'
