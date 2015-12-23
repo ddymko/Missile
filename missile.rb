@@ -3,6 +3,7 @@ require 'thor'
 require 'yaml'
 require 'net/scp'
 require_relative "lib/list"
+require_relative 'lib/setup'
 
 class Missile < Thor
 
@@ -12,14 +13,9 @@ class Missile < Thor
   option :d, :type => :boolean , :desc => "Deletes specified project"
   def setup(project)
 
-    project_dir =  Dir.pwd + '/configs/' + project + '.yaml'
+    project_dir =  @@file_path + '/' + project + '.yaml'
     if options[:d]
-      if File.exist?(project_dir)
-        File.delete(project_dir)
-        puts "#{project} was successfully deleted"
-      else
-        puts "File #{project} does not exist"
-      end
+      Setup.delete(project_dir)
     else
       print 'Please enter your host > '
       host = STDIN.gets.chomp
@@ -36,6 +32,7 @@ class Missile < Thor
     end
   end
 
+  ## List actions
   desc 'list', 'Displays available deployments'
   option :i, :type => :boolean , :desc => "[project name] -i Displays information about specific deployment setup "
   def list(project="")
