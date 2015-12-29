@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby -U
+require 'missile'
+
+Missile::Missile.start(ARGV)

@@ -1,14 +1,13 @@
-#!/usr/bin/env ruby
-APP_ROOT = File.dirname(__FILE__)
+require "Missile/version"
 require 'thor'
 require 'yaml'
 require 'net/scp'
-require File.join(APP_ROOT, 'lib', 'list')
-require File.join(APP_ROOT, 'lib', 'setup')
-require File.join(APP_ROOT, 'lib', 'deploy')
+require_relative 'missile/list'
+require_relative 'missile/setup'
+require_relative 'missile/deploy'
 
-
-class Missile < Thor
+module Missile
+  class Missile < Thor
 
   @@file_path = File.expand_path(File.dirname(__FILE__)) + "/configs"
 
@@ -22,6 +21,8 @@ class Missile < Thor
   desc 'list', 'Displays available deployments'
   option :i, :type => :boolean , :desc => "[project name] -i Displays information about specific deployment setup "
   def list(project="")
+    puts @@file_path
+
     options[:i] ?  List.info(project_path(project)) : List.list_all(@@file_path)
   end
 
@@ -36,4 +37,4 @@ class Missile < Thor
     end
   }
 end
-Missile.start(ARGV)
+end

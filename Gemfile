@@ -1,3 +1,4 @@
 source 'https://rubygems.org'
-gem 'thor'
-gem 'net-scp'
+
+# Specify your gem's dependencies in Missile.gemspec
+gemspec
