@@ -2,8 +2,9 @@
 require 'thor'
 require 'yaml'
 require 'net/scp'
-require_relative "lib/list"
+require_relative 'lib/list'
 require_relative 'lib/setup'
+require_relative 'lib/deploy'
 
 class Missile < Thor
 
@@ -26,15 +27,8 @@ class Missile < Thor
 
   desc 'deploy PROJECT_NAME', 'this will start a deployment for the specified project'
   def deploy(project)
-
-    project =  '/configs/' + project + '.yaml'
-    config = YAML.load_file(File.join(__dir__, project ))
-    Net::SCP.upload!(config[:host], config[:username],
-                     config[:local_path], config[:web_path],
-                     :ssh => {:password => config[:password]},
-                     :recursive => true)
-
-    puts 'deployment complete'
+    project_dir =  @@file_path + '/' + project + '.yaml'
+    Deploy.deploy(project_dir)
   end
 end
 Missile.start(ARGV)
