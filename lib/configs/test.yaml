@@ -1,0 +1,6 @@
+---
+:host: host.com
+:username: root
+:password: passwprd
+:web_path: "/user/"
+:local_path: "/Users/Dymko/Documents/"

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    Missile (0.1.0)
+    Missile-Deploy (0.1.0)
       net-scp
       thor
 
@@ -19,7 +19,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  Missile!
+  Missile-Deploy!
   bundler (~> 1.10)
   minitest
   rake (~> 10.0)
