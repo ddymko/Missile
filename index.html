@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Missile by ddymko</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Missile</h1>
+      <h2 class="project-tagline">CLI app that does web deployments</h2>
+      <a href="https://github.com/ddymko/Missile" class="btn">View on GitHub</a>
+      <a href="https://github.com/ddymko/Missile/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ddymko/Missile/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="missile" class="anchor" href="#missile" aria-hidden="true"><span class="octicon octicon-link"></span></a>Missile</h1>
+
+<p>Welcome to Missile!</p>
+
+<p>This wonderful ruby gem is a CLI tool that lets you quickly and easily specify project deployments.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<div class="highlight highlight-source-ruby"><pre><span class="pl-k">gem</span> <span class="pl-s"><span class="pl-pds">'</span>Missile<span class="pl-pds">'</span></span></pre></div>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install Missile
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<h4>
+<a id="setup-a-deployment-config" class="anchor" href="#setup-a-deployment-config" aria-hidden="true"><span class="octicon octicon-link"></span></a>Setup a deployment config</h4>
+
+<p>So in order to run deployments you will need to setup a deployment config. To do this simply run the following</p>
+
+<pre><code>missile setup ['deployment config name']
+</code></pre>
+
+<p>During setup you will be prompted to enter 5 pieces of information</p>
+
+<ul>
+<li>host</li>
+<li>username</li>
+<li>password</li>
+<li>local path (path to the project on your machine)</li>
+<li>remote path (path to where the project will live on the remote location)
+After you enter all of that information your deployment config will be saved</li>
+</ul>
+
+<h4>
+<a id="delete-a-deployment-config" class="anchor" href="#delete-a-deployment-config" aria-hidden="true"><span class="octicon octicon-link"></span></a>Delete a deployment config</h4>
+
+<p>To delete a deployment config you have created you run the setup command with the <em>-d</em> flag</p>
+
+<pre><code>missile setup ['deployment config name'] -d
+</code></pre>
+
+<h4>
+<a id="viewing-deployment-configs" class="anchor" href="#viewing-deployment-configs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing deployment configs</h4>
+
+<p>To view all of the available deployment configs you have run the following:</p>
+
+<pre><code>missile list
+</code></pre>
+
+<p>This will return the names of all of the available deployment configs you have</p>
+
+<h4>
+<a id="viewing-a-single-deployment-configs-details" class="anchor" href="#viewing-a-single-deployment-configs-details" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viewing a single deployment configs details</h4>
+
+<p>If you want to view the specifics of a deployment config run list command with the <em>-i</em> flag</p>
+
+<pre><code>missile list ['deployment config name'] -i
+</code></pre>
+
+<h4>
+<a id="deploying" class="anchor" href="#deploying" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deploying</h4>
+
+<p>To deploy your project all you need to do is run the following:</p>
+
+<pre><code>missile deploy ['deployment config name']
+</code></pre>
+
+<p>This will take execute deployment based on what you have set in your deployment config</p>
+
+<h2>
+<a id="development" class="anchor" href="#development" aria-hidden="true"><span class="octicon octicon-link"></span></a>Development</h2>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<p>Bug reports and pull requests are welcome on GitHub at <a href="https://github.com/ddymko/Missile">https://github.com/ddymko/Missile</a>.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>The gem is available as open source under the terms of the <a href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ddymko/Missile">Missile</a> is maintained by <a href="https://github.com/ddymko">ddymko</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
