@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'Missile/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "Missile"
+  spec.name          = "Missile-Deploy"
   spec.version       = Missile::VERSION
   spec.authors       = ["ddymko"]
   spec.email         = ["dymkod@gmail.com"]
