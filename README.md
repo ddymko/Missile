@@ -1,8 +1,7 @@
 # Missile
+Welcome to Missile!
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Missile`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This wonderful ruby gem is a CLI tool that lets you quickly and easily specify project deployments.
 
 ## Installation
 
@@ -21,21 +20,54 @@ Or install it yourself as:
     $ gem install Missile
 
 ## Usage
+#### Setup a deployment config
+So in order to run deployments you will need to setup a deployment config. To do this simply run the following
+```
+missile setup ['deployment config name']
+```
+During setup you will be prompted to enter 5 pieces of information
+  * host
+  * username
+  * password
+  * local path (path to the project on your machine)
+  * remote path (path to where the project will live on the remote location)
+After you enter all of that information your deployment config will be saved
 
-TODO: Write usage instructions here
+#### Delete a deployment config
+To delete a deployment config you have created you run the setup command with the *-d* flag
+```
+missile setup ['deployment config name'] -d
+```
+
+#### Viewing deployment configs
+To view all of the available deployment configs you have run the following:
+```
+missile list
+```
+This will return the names of all of the available deployment configs you have
+
+#### Viewing a single deployment configs details
+If you want to view the specifics of a deployment config run list command with the *-i* flag
+```
+missile list ['deployment config name'] -i
+```
+
+#### Deploying
+To deploy your project all you need to do is run the following:
+```
+missile deploy ['deployment config name']
+```
+This will take execute deployment based on what you have set in your deployment config
+
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/Missile.
+Bug reports and pull requests are welcome on GitHub at https://github.com/ddymko/Missile.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
