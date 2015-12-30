@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{CLI tool that allows you to do deployments}
   spec.description   = %q{Missile allows you to easily and quickly define what project you want to deployed to a specific location}
-  spec.homepage      = "http://www.dymko.me"
+  spec.homepage      = "http://ddymko.github.io/Missile"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'thor'
-  spec.add_dependency 'net-scp'  
+  spec.add_dependency 'net-scp'
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest"
