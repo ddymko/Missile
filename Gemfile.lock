@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    Missile-Deploy (0.1.0)
+    Missile-Deploy (0.2.0)
       net-scp
       thor
 

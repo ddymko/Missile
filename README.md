@@ -31,6 +31,7 @@ During setup you will be prompted to enter 5 pieces of information
   * password
   * local path (path to the project on your machine)
   * remote path (path to where the project will live on the remote location)
+  * port number (port number used to access your server *if you are using default leave blank*)
 After you enter all of that information your deployment config will be saved
 
 #### Delete a deployment config
