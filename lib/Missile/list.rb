@@ -14,7 +14,6 @@ class List
     if File.exist?(project)
         text = File.open(project)
         text.each_line do |line|
-          puts "#{line}"
         end
     else
       puts "The deployment file you are looking for does not exist"

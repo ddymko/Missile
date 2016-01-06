@@ -5,7 +5,8 @@ class Deploy
     puts 'starting deployment'
     Net::SCP.upload!(config[:host], config[:username],
                      config[:local_path], config[:web_path],
-                     :ssh => {:password => config[:password]},
+                     :ssh => {:password => config[:password],
+                              :port => config[:port]},
                      :recursive => true)
 
     puts 'deployment complete'

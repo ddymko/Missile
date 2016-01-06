@@ -18,8 +18,12 @@ class Setup
     web_path = STDIN.gets.chomp
     print 'Please enter local path to project > '
     local_path = STDIN.gets.chomp
+    print 'Please enter port number (leave blank if default)'
+    port = STDIN.gets.chomp
 
-    configs = {:host => host, :username => username, :password => password, :web_path => web_path, :local_path => local_path}
+    port = port.nil? ? port : '22'
+
+    configs = {:host => host, :username => username, :password => password, :web_path => web_path, :local_path => local_path, :port => port}
     File.open(File.expand_path(project_dir), 'w+') { |file| file.write(configs.to_yaml) }
   end
 
